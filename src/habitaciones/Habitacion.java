@@ -28,11 +28,11 @@ public class Habitacion extends alojamientos {
         this.numeroPiso = numeroPiso;
         this.balcon = balcon;
     }
-    
-    
-    
-    
-    
-    
-    
+
+    @Override
+    public String toString() {
+        return "Habitacion{" + "codigo: " + getCodigo() + "Nombre: " + getNombre() + "Capacidad: " + getCapacidad() + "Precio noceh: " + getPrecioNoche() + 
+                "Disponibilidad: " + isDisponibilidad() + " estado: " + getEstado() + "numeroPiso=" + numeroPiso + ", balcon=" + balcon + '}';
+    }
+  
 }
