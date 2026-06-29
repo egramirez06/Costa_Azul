@@ -1,0 +1,72 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
+ */
+package reservaciones;
+
+import Alojamiento.alojamientos;
+import clientes.Cliente;
+import java.time.LocalDate;
+
+/**
+ *
+ * @author Student
+ */
+public class Reservacion {
+    protected Cliente clientes;
+    protected alojamientos alojamiento;
+    protected String fechaIngreso;
+    protected LocalDate fechaSalida;
+    protected String estadoReserva;
+
+    public Cliente getClientes() {
+        return clientes;
+    }
+
+    public alojamientos getAlojamiento() {
+        return alojamiento;
+    }
+
+    public String getFechaIngreso() {
+        return fechaIngreso;
+    }
+
+    public LocalDate getFechaSalida() {
+        return fechaSalida;
+    }
+
+    public String getEstadoReserva() {
+        return estadoReserva;
+    }
+
+    public void setAlojamiento(alojamientos alojamiento) {
+        this.alojamiento = alojamiento;
+    }
+
+    public void setFechaIngreso(String fechaIngreso) {
+        this.fechaIngreso = fechaIngreso;
+    }
+
+    public void setFechaSalida(LocalDate fechaSalida) {
+        this.fechaSalida = fechaSalida;
+    }
+
+    public void setEstadoReserva(String estadoReserva) {
+        this.estadoReserva = estadoReserva;
+    }
+
+    public Reservacion(Cliente clientes, alojamientos alojamiento, String fechaIngreso, LocalDate fechaSalida, String estadoReserva) {
+        this.clientes = clientes;
+        this.alojamiento = alojamiento;
+        this.fechaIngreso = fechaIngreso;
+        this.fechaSalida = fechaSalida;
+        this.estadoReserva = estadoReserva;
+    }
+
+    @Override
+    public String toString() {
+        return "Reservacion: " + "clientes: " + clientes + "\nalojamiento: " + alojamiento + "\nfechaIngreso: " + fechaIngreso + "\nfechaSalida: " + fechaSalida + "\nestadoReserva:" + estadoReserva;
+    }
+    
+    
+}
