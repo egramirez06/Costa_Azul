@@ -7,6 +7,7 @@ package reservaciones;
 import Alojamiento.alojamientos;
 import clientes.Cliente;
 import java.time.LocalDate;
+import java.time.Period;
 
 /**
  *
@@ -15,7 +16,7 @@ import java.time.LocalDate;
 public class Reservacion {
     protected Cliente clientes;
     protected alojamientos alojamiento;
-    protected String fechaIngreso;
+    protected LocalDate fechaIngreso;
     protected LocalDate fechaSalida;
     protected estadoReserva estadoReserva;
 
@@ -27,7 +28,7 @@ public class Reservacion {
         return alojamiento;
     }
 
-    public String getFechaIngreso() {
+    public LocalDate getFechaIngreso() {
         return fechaIngreso;
     }
 
@@ -43,7 +44,7 @@ public class Reservacion {
         this.alojamiento = alojamiento;
     }
 
-    public void setFechaIngreso(String fechaIngreso) {
+    public void setFechaIngreso(LocalDate fechaIngreso) {
         this.fechaIngreso = fechaIngreso;
     }
 
@@ -55,12 +56,15 @@ public class Reservacion {
         this.estadoReserva = estadoReserva;
     }
 
-    public Reservacion(Cliente clientes, alojamientos alojamiento, String fechaIngreso, LocalDate fechaSalida, estadoReserva estadoReserva) {
+    public Reservacion(Cliente clientes, alojamientos alojamiento, LocalDate fechaIngreso, LocalDate fechaSalida, estadoReserva estadoReserva) {
         this.clientes = clientes;
         this.alojamiento = alojamiento;
         this.fechaIngreso = fechaIngreso;
         this.fechaSalida = fechaSalida;
         this.estadoReserva = estadoReserva;
+    }
+    public int calcularNochesReserva(){
+        return Period.between(fechaIngreso, fechaSalida).getDays();
     }
 
     @Override
