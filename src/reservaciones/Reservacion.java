@@ -17,7 +17,7 @@ public class Reservacion {
     protected alojamientos alojamiento;
     protected String fechaIngreso;
     protected LocalDate fechaSalida;
-    protected String estadoReserva;
+    protected estadoReserva estadoReserva;
 
     public Cliente getClientes() {
         return clientes;
@@ -35,7 +35,7 @@ public class Reservacion {
         return fechaSalida;
     }
 
-    public String getEstadoReserva() {
+    public estadoReserva getEstadoReserva() {
         return estadoReserva;
     }
 
@@ -51,11 +51,11 @@ public class Reservacion {
         this.fechaSalida = fechaSalida;
     }
 
-    public void setEstadoReserva(String estadoReserva) {
+    public void setEstadoReserva(estadoReserva estadoReserva) {
         this.estadoReserva = estadoReserva;
     }
 
-    public Reservacion(Cliente clientes, alojamientos alojamiento, String fechaIngreso, LocalDate fechaSalida, String estadoReserva) {
+    public Reservacion(Cliente clientes, alojamientos alojamiento, String fechaIngreso, LocalDate fechaSalida, estadoReserva estadoReserva) {
         this.clientes = clientes;
         this.alojamiento = alojamiento;
         this.fechaIngreso = fechaIngreso;
