@@ -11,14 +11,15 @@ import Alojamiento.alojamientos;
  * @author Student
  */
 public class cabanas extends alojamientos{
-      protected double tamaño;
+      protected String tamaño;
     protected final double impuesto =13/100;
-    protected String piscina;
+    protected boolean piscina ;
     protected double mCuadrados;
     protected double precioTOT;
-    protected final double cantNoches;
+    protected double precioIva;
+    protected double cantNoches;
 
-    public double getTamaño() {
+    public String getTamaño() {
         return tamaño;
     }
 
@@ -26,7 +27,7 @@ public class cabanas extends alojamientos{
         return impuesto;
     }
 
-    public String getPiscina() {
+    public boolean getPiscina() {
         return piscina;
     }
 
@@ -43,11 +44,19 @@ public class cabanas extends alojamientos{
         return precioNoche;
     }
 
+    public double getPrecioIva() {
+        return precioIva;
+    }
+
+    public double getCantNoches() {
+        return cantNoches;
+    }
+
    
 
     
     
-    public cabanas(double tamaño, String piscina, double mCuadrados, double precioTOT, double cantNoches1) {
+    public cabanas(String tamaño, boolean piscina, double mCuadrados, double precioTOT, double cantNoches1) {
         this.tamaño = tamaño;
         this.piscina = piscina;
         this.mCuadrados = mCuadrados;
@@ -56,21 +65,69 @@ public class cabanas extends alojamientos{
           
     }
     
-    public void cabanaTam(){
+    public String cabanaTam(){
         if(mCuadrados>=80){
-            System.out.print("Cabaña amplia");
+           System.out.print("Cabaña amplia");
            
         }else {
             System.out.print("Cabaña no amplia");
-        }      
+        }   
+      return tamaño;
     }
     
-   public void precioTotal(){
+   public double precioTotal(){
        for(int i = 0; i>cantNoches; i++){
+           
            precioTOT= getPrecioNoche() * cantNoches;
+           break;
+           
        }
-       
+       precioIva= impuesto*precioTOT;
+       return precioIva;
    }
+
+   public boolean hayPiscina(){
+       if (piscina=true){
+             System.out.print(" Si ");
+       }
+       return piscina;
+   }
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+    @Override
+    public String toString() {
+        return "cabanas{ tamaño=" + tamaño +
+                " /n impuesto=" +  impuesto +
+                "/n Cabaña posee piscina=" +
+                piscina +  "/n Sub-total sin impuesto=" + 
+                precioTOT + "/n Total con impuesto=" + 
+                precioIva + "/n cantidad de noches=" +
+                cantNoches + '}';
+    }
     
     
     
@@ -87,4 +144,4 @@ public class cabanas extends alojamientos{
     
     
     
-}
+            }
