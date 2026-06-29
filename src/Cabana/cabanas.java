@@ -4,17 +4,19 @@
  */
 package Cabana;
 
+import Alojamiento.alojamientos;
+
 /**
  *
  * @author Student
  */
-public class cabanas {
+public class cabanas extends alojamientos{
       protected double tamaño;
     protected final double impuesto =13/100;
     protected String piscina;
     protected double mCuadrados;
     protected double precioTOT;
-    protected final double cantNoches = 20;
+    protected final double cantNoches;
 
     public double getTamaño() {
         return tamaño;
@@ -36,11 +38,22 @@ public class cabanas {
         return precioTOT;
     }
 
-    public cabanas(double tamaño, String piscina, double mCuadrados, double precioTOT) {
+      @Override
+    public int getPrecioNoche() {
+        return precioNoche;
+    }
+
+   
+
+    
+    
+    public cabanas(double tamaño, String piscina, double mCuadrados, double precioTOT, double cantNoches1) {
         this.tamaño = tamaño;
         this.piscina = piscina;
         this.mCuadrados = mCuadrados;
         this.precioTOT = precioTOT;
+          this.cantNoches = cantNoches1;
+          
     }
     
     public void cabanaTam(){
@@ -52,7 +65,12 @@ public class cabanas {
         }      
     }
     
-   
+   public void precioTotal(){
+       for(int i = 0; i>cantNoches; i++){
+           precioTOT= getPrecioNoche() * cantNoches;
+       }
+       
+   }
     
     
     
