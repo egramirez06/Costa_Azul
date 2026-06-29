@@ -24,10 +24,12 @@ public class Habitacion extends alojamientos {
         this.numeroPiso = numeroPiso;
     }
 
-    public Habitacion(int numeroPiso, boolean balcon) {
+    public Habitacion(int codigo, String nombre, int capacidad, final int precioNoche, boolean disponibilidad, String estado,int numeroPiso, boolean balcon) {
         this.numeroPiso = numeroPiso;
         this.balcon = balcon;
     }
+    
+    
     
     
     
